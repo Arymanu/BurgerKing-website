@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+       
+      
+     
+      </head>
+      
+      <body>
+          
+        <video
+          id="my-video"
+          class="video-js"
+          controls="controls"
+          preload="auto"
+          width="640"
+          height="264"
+          poster="MY_VIDEO_POSTER.jpg"
+          data-setup="{}"
+          playsinline
+          autoplay
+        >
+        <source src="video01.mp4" id="mp4Source" type="video/mp4">
+        <source src="video.mp4" id="mp4Source1" type="video/mp4">
+   
+        <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank"
+              >supports HTML5 video</a
+            >
+          </p>
+        
+    </video>
+    <script type='text/javascript'>
+        var player=document.getElementById('my-video');
+        var mp4Vid = document.getElementById('mp4Source');
+        player.addEventListener('ended',myHandler_ended,false);
+    
+        function myHandler_ended(e)
+        {
+            mp4Vid.src = document.getElementById('mp4Source1');
+            player.load();
+            player.play();
+            
+    }
+    </script>
+        
+       
+      
+      </body>
+
+    
+</html>
